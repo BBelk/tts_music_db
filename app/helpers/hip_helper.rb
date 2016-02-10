@@ -1,0 +1,2 @@
+module HipHelper
+end
