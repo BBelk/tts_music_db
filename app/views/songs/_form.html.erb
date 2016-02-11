@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Input Song Name' %>
   </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.select :rating, [1, 2, 3, 4, 5], {:include_blank => 'Rate this song'} %>
+  <div class="form-group">
+    <%= f.label :rating %>
+    <%= f.select :rating, [1, 2, 3, 4, 5], {:include_blank => 'Rate this song'}, class: 'form-control'%>
   </div>
-  <div class="field">
-    <%= f.label :artist_id %><br>
-    <%= f.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Select an Artist'} %>
+  <div class="form-group">
+    <%= f.label :artist_id %>
+    <%= f.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Select an Artist'}, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+<%= f.text_field :video, class: 'form-control', placeholder: 'YouTube Video Link' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Fuck Art", class: 'btn btn-default' %>
   </div>
 <% end %>

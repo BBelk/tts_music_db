@@ -1,2 +1,18 @@
-<h1>Hip#hop</h1>
-<p>Find me in app/views/hip/hop.html.erb</p>
+<h1>Top 5 Songs</h1>
+
+<div class="row">
+<% @songs.each do |song|  %>
+
+<div class="col-md-12">
+		<div class="well">
+  <h1><%= link_to song.name, song %></h1>
+  	<h3>by: <%= link_to song.artist.name, song.artist  %></h3>
+<h4>
+    Rating: <%  song.rating.times do %>
+    <i class ="glyphicon glyphicon-certificate"></i>
+    <%end %>
+</h4>
+		</div>
+	</div>
+<% end %>
+</div>
